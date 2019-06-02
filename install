@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+echo "downloading..."
+for it (*.download); do
+	echo "... ${it:r}"
+	source $it
+done
+echo "done"
+
+echo "linking..."
+for it (*.dotfile); do
+	echo "... ${it} => .${it:r}"
+	ln -sf ~/.dotfiles/$it ~/.${it:r}
+done
+echo "done"
