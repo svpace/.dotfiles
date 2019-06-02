@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+echo "linking..."
+for dotfile (*.dotfile); do
+	echo "... ${dotfile} => .${dotfile:r}"
+	ln -sf ~/.dotfiles/$dotfile ~/.${dotfile:r}
+done
+echo done
