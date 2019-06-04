@@ -3,11 +3,9 @@
 [user]
   name = svpace
   email = svpace@gmail.com
-[commit]
-  gpgSign = false
 [alias]
   co = checkout
   lg = log --all --graph --abbrev-commit --decorate --format=format:'%<|(12)%C(white)%s%C(reset) %C(auto)%d%C(reset)%n%C(bold dim blue)%h%C(reset)%C(dim white)- %an%C(reset) %C(dim green)(%ar)%C(reset)%n'
-
 [rebase]
 	autosquash = true
+

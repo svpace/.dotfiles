@@ -1,12 +1,7 @@
-local DOTS=${HOME}/.dotfiles
-
-for script ($DOTS/zsh.d/*.zsh(N)); do
+for script ($HOME/.dotfiles/zsh.d/*.zsh(N)); do
 	source $script
 done
 
 #bindkey -e
 zstyle :compinstall filename '/home/svpace/.zshrc'
 
-source $DOTS/agnoster-zsh-theme/agnoster.zsh-theme
-
-source ~/.fzf.zsh
