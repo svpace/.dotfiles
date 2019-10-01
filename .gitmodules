@@ -10,3 +10,6 @@
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "sdkman"]
+	path = sdkman
+	url = https://github.com/sdkman/sdkman-cli.git
