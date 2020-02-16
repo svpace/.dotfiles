@@ -4,7 +4,7 @@ unset mouse
 set tabsize 4
 set smarthome
 
-bind ^C copytext main
+bind ^C copy main
 #bind F1 help all
 bind ^F whereis main
 bind ^H replace main
@@ -14,7 +14,7 @@ bind ^Q cancel all
 bind ^Q exit main
 bind ^Q exit help
 bind ^S writeout main
-bind ^V uncut main
+bind ^V paste main
 bind ^X cut main
 bind ^Y redo main
 bind ^Z undo main
