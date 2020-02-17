@@ -1,38 +1,95 @@
+setopt append_history
+setopt auto_menu
+setopt correct
+setopt extended_glob
+setopt extended_history
+setopt hist_ignore_all_dups
+setopt no_case_glob
+setopt no_beep
+setopt numeric_glob_sort
+setopt prompt_subst
 
-HISTFILE=~/.histfile
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.dotfiles/agnoster-zsh-theme/agnoster.zsh-theme
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+
+HISTFILE=~/.zhistory
 HISTSIZE=10000
 SAVEHIST=10000
 DEFAULT_USER=svpace
-#export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
-setopt appendhistory
-setopt extended_history
-setopt extended_glob
-setopt prompt_subst
-setopt auto_pushd
-setopt auto_menu
-unsetopt beep
+WORDCHARS=${WORDCHARS//\/[&.;]}
+HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
-autoload -Uz compinit
-compinit
+zmodload zsh/terminfo
 
-zmodload -i zsh/complist
+bindkey -e
+bindkey '^[[7~' beginning-of-line
+bindkey '^[[H' beginning-of-line
+if [[ "$terminfo[khome]" != "" ]]; then
+  bindkey "$terminfo[khome]" beginning-of-line
+fi
+bindkey '^[[8~' end-of-line
+bindkey '^[[F' end-of-line
+if [[ "$terminfo[kend]" != "" ]]; then
+  bindkey "$terminfo[kend]" end-of-line
+fi
 
-setopt auto_menu
+bindkey '^[[2~' overwrite-mode
+bindkey '^[[3~' delete-char
+bindkey '^[[C'  forward-char
+bindkey '^[[D'  backward-char
+bindkey '^[[5~' history-beginning-search-backward
+bindkey '^[[6~' history-beginning-search-forward
 
-zstyle ':completion:*' menu select
-source $HOME/.dotfiles/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.dotfiles/agnoster-zsh-theme/agnoster.zsh-theme
-source $HOME/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.dotfiles/fzf/shell/completion.zsh
-source $HOME/.dotfiles/fzf/shell/key-bindings.zsh
+bindkey '^[Oc' forward-word
+bindkey '^[Od' backward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+bindkey '^H' backward-kill-word
+bindkey '^[[Z' undo
+
+bindkey '^[[A' history-substring-search-up			
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/.npm-global/bin" ] ; then
+    PATH="$HOME/.npm-global/bin:$PATH"
+fi
+
+alias cp='cp -i'
+alias df='df -h'
+alias free='free -m'
+alias gitu='git add . && git commit && git push'
 alias ll='ls -l'
 alias s='ag --nobreak --noheading . | fzf --delimiter=':' --nth=3..'
 
-#bindkey -e
-zstyle :compinstall filename '/home/svpace/.zshrc'
+autoload -U compinit
+compinit -d
 
-export SDKMAN_DIR="/home/svpace/.sdkman"
-source "/home/svpace/.sdkman/bin/sdkman-init.sh"
+export LESS_TERMCAP_mb=$'\E[01;32m'
+export LESS_TERMCAP_md=$'\E[01;32m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;47;34m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;36m'
+export LESS=-r
 
-export JAVA_HOME=/home/svpace/.sdkman/candidates/java/current
+
 

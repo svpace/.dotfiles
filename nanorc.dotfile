@@ -3,6 +3,7 @@ set morespace
 unset mouse
 set tabsize 4
 set smarthome
+set linenumbers
 
 bind ^C copy main
 #bind F1 help all
@@ -18,3 +19,46 @@ bind ^V paste main
 bind ^X cut main
 bind ^Y redo main
 bind ^Z undo main
+
+include /usr/share/nano-syntax-highlighting/asciidoc.nanorc
+include /usr/share/nano-syntax-highlighting/awk.nanorc
+include /usr/share/nano-syntax-highlighting/clojure.nanorc
+include /usr/share/nano-syntax-highlighting/c.nanorc
+include /usr/share/nano-syntax-highlighting/conf.nanorc
+include /usr/share/nano-syntax-highlighting/css.nanorc
+include /usr/share/nano-syntax-highlighting/csv.nanorc
+include /usr/share/nano-syntax-highlighting/Dockerfile.nanorc
+include /usr/share/nano-syntax-highlighting/dotenv.nanorc
+include /usr/share/nano-syntax-highlighting/erb.nanorc
+include /usr/share/nano-syntax-highlighting/etc-hosts.nanorc
+include /usr/share/nano-syntax-highlighting/gitcommit.nanorc
+include /usr/share/nano-syntax-highlighting/git.nanorc
+include /usr/share/nano-syntax-highlighting/go.nanorc
+include /usr/share/nano-syntax-highlighting/gradle.nanorc
+include /usr/share/nano-syntax-highlighting/html.j2.nanorc
+include /usr/share/nano-syntax-highlighting/html.nanorc
+include /usr/share/nano-syntax-highlighting/ini.nanorc
+include /usr/share/nano-syntax-highlighting/java.nanorc
+include /usr/share/nano-syntax-highlighting/javascript.nanorc
+include /usr/share/nano-syntax-highlighting/js.nanorc
+include /usr/share/nano-syntax-highlighting/json.nanorc
+include /usr/share/nano-syntax-highlighting/makefile.nanorc
+include /usr/share/nano-syntax-highlighting/markdown.nanorc
+include /usr/share/nano-syntax-highlighting/nanorc.nanorc
+include /usr/share/nano-syntax-highlighting/nginx.nanorc
+include /usr/share/nano-syntax-highlighting/patch.nanorc
+include /usr/share/nano-syntax-highlighting/perl6.nanorc
+include /usr/share/nano-syntax-highlighting/perl.nanorc
+include /usr/share/nano-syntax-highlighting/po.nanorc
+include /usr/share/nano-syntax-highlighting/python.nanorc
+include /usr/share/nano-syntax-highlighting/ruby.nanorc
+include /usr/share/nano-syntax-highlighting/rust.nanorc
+include /usr/share/nano-syntax-highlighting/sed.nanorc
+include /usr/share/nano-syntax-highlighting/sh.nanorc
+include /usr/share/nano-syntax-highlighting/sql.nanorc
+include /usr/share/nano-syntax-highlighting/systemd.nanorc
+include /usr/share/nano-syntax-highlighting/ts.nanorc
+include /usr/share/nano-syntax-highlighting/xml.nanorc
+include /usr/share/nano-syntax-highlighting/yaml.nanorc
+include /usr/share/nano-syntax-highlighting/zsh.nanorc
+include /usr/share/nano-syntax-highlighting/zshrc.nanorc
