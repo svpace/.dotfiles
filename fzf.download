@@ -1,4 +1,0 @@
-local base_url=https://github.com/junegunn/fzf-bin/releases/download
-local version=0.18.0
-curl -fL $base_url/$version/fzf-$version-linux_amd64.tgz | tar -xzf - -C ${HOME}/.local/bin
-chmod +x ${HOME}/.local/bin/fzf
