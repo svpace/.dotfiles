@@ -1,0 +1,3 @@
+curl -fLsSo --progress-bar /tmp/google-cloud-sdk.tgz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-283.0.0-linux-x86_64.tar.gz
+tar zxvf google-cloud-sdk.tgz -C ~/.local/fast/opt
+source ~/.local/fast/opt/google-cloud-sdk/install.sh
